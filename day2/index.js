@@ -2,9 +2,12 @@
 // console.log("你好")
 // console.log(Progress)
 const program = require('commander');
-// program
-//         .version("1.0.0","-v,--version")
-//         .option('-a,--add')
+const inquirer=require("inquirer")
+const fs=require("fs")
+let data=require("./login.json")
+program
+        .version("1.0.0","-v,--version")
+        .option('-a,--add')
 //         .option('-s,--sss')
 //         .option("--nav-figg")
 //         .option('--no-fff','not add a file')
@@ -13,16 +16,9 @@ const program = require('commander');
         //     console.log('aaa', aaa)
         // })
         
-// program.parse(process.argv)
-// if(program.add) console.log("add")
-// if(program.sss) console.log("sss")
-// if(program.navFigg) console.log("fiss")
-// if(program.fff) console.log('add a file')
-// else console.log('not add a file')
-const inquirer=require("inquirer")
-const fs=require("fs")
-let data=require("./login.json")
-const listData=[
+program.parse(process.argv)
+if(program.add){
+  const listData=[
     {
         type: 'input',
         message: '您的姓名:',
@@ -59,4 +55,10 @@ inquirer.prompt(listData).then(res=>{
         console.log('tag', '不能重复添加')
     }
    
-})
+})  
+}
+// if(program.sss) console.log("sss")
+// if(program.navFigg) console.log("fiss")
+// if(program.fff) console.log('add a file')
+// else console.log('not add a file')
+
