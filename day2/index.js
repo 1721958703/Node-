@@ -3,12 +3,14 @@
 // console.log(Progress)
 const program = require('commander');
 const inquirer=require("inquirer")
+pablish
 const fs=require("fs")
+let http=require("http")
 let data=require("./login.json")
 program
         .version("1.0.0","-v,--version")
         .option('-a,--add')
-//         .option('-s,--sss')
+        .option('-h,--llll')
 //         .option("--nav-figg")
 //         .option('--no-fff','not add a file')
         // .action((path,aaa)=>{
@@ -56,6 +58,13 @@ inquirer.prompt(listData).then(res=>{
     }
    
 })  
+}
+if(program.llll){
+    http.createServer((req,res)=>{
+        res.end(fs.readFileSync("./index.js"))
+    }).listen(5555,()=>{
+        console.log("充公")
+    })
 }
 // if(program.sss) console.log("sss")
 // if(program.navFigg) console.log("fiss")
