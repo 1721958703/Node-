@@ -3,7 +3,7 @@
 // console.log(Progress)
 const program = require('commander');
 const inquirer=require("inquirer")
-pablish
+
 const fs=require("fs")
 let http=require("http")
 let data=require("./login.json")
